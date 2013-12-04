@@ -75,4 +75,4 @@ The icons come courtesy of [Font
 Awesome](http://fortawesome.github.io/Font-Awesome/) (thanks, Dave,
 you're awesome).
 
-[[https://raw.github.com/wiki/Blue-Rocket/BRPDFImage/img/brpdfimage-demo.png]]
+![Demo App](https://raw.github.com/wiki/Blue-Rocket/BRPDFImage/img/brpdfimage-demo.png)
