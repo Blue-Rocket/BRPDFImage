@@ -1,0 +1,7 @@
+BRPDFImage
+Copyright 2013 Blue Rocket, Inc. Distributable under the
+terms of the Apache License, Version 2.0.
+
+This software makes use of the (awesome) Font Awesome font, released
+under the SIL OFL 1.1 licence (http://scripts.sil.org/OFL). See
+http://fortawesome.github.io/Font-Awesome/ for more information.
