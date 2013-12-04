@@ -8,31 +8,39 @@
 
 #import "SimpleIconViewController.h"
 
+#import "BRPDFImage.h"
+#import "SimpleIconCell.h"
+#import "UIColor+Demo.h"
+
+static NSString * const kCellIdentifier = @"IconCell";
+
 @interface SimpleIconViewController ()
 
 @end
 
 @implementation SimpleIconViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	[self.collectionView registerNib:[UINib nibWithNibName:@"SimpleIconCell" bundle:nil] forCellWithReuseIdentifier:kCellIdentifier];
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+	return 1;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+	return 100;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+	SimpleIconCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCellIdentifier forIndexPath:indexPath];
+	NSString *iconName = [NSString stringWithFormat:@"%u", arc4random_uniform(2)];
+	BRPDFImage *img = [[BRPDFImage alloc] initWithURL:[[NSBundle mainBundle] URLForResource:iconName withExtension:@"pdf"]
+										   pageNumber:1 renderSize:CGSizeMake(100,100)
+									  backgroundColor:[UIColor clearColor] tintColor:[UIColor randomColor]];
+	cell.iconView.image = img;
+	return cell;
 }
 
 @end

@@ -27,6 +27,10 @@
 		C9A34E57184FA819009DFCBB /* TableIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A34E56184FA819009DFCBB /* TableIconCell.m */; };
 		C9A34E59184FA82F009DFCBB /* TableIconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9A34E58184FA82F009DFCBB /* TableIconCell.xib */; };
 		C9A34E65184FA92D009DFCBB /* libBRPDFImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A34E60184FA918009DFCBB /* libBRPDFImage.a */; };
+		C9A34E67184FAA3F009DFCBB /* SimpleIconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9A34E66184FAA3F009DFCBB /* SimpleIconCell.xib */; };
+		C9A34E6A184FABEB009DFCBB /* UIColor+Demo.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A34E69184FABEB009DFCBB /* UIColor+Demo.m */; };
+		C9A34E70184FAF00009DFCBB /* 0.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C9A34E6E184FAF00009DFCBB /* 0.pdf */; };
+		C9A34E71184FAF00009DFCBB /* 1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C9A34E6F184FAF00009DFCBB /* 1.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +93,11 @@
 		C9A34E56184FA819009DFCBB /* TableIconCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableIconCell.m; sourceTree = "<group>"; };
 		C9A34E58184FA82F009DFCBB /* TableIconCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableIconCell.xib; sourceTree = "<group>"; };
 		C9A34E5A184FA918009DFCBB /* BRPDFImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BRPDFImage.xcodeproj; path = ../BRPDFImage/BRPDFImage.xcodeproj; sourceTree = "<group>"; };
+		C9A34E66184FAA3F009DFCBB /* SimpleIconCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleIconCell.xib; sourceTree = "<group>"; };
+		C9A34E68184FABEB009DFCBB /* UIColor+Demo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Demo.h"; sourceTree = "<group>"; };
+		C9A34E69184FABEB009DFCBB /* UIColor+Demo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Demo.m"; sourceTree = "<group>"; };
+		C9A34E6E184FAF00009DFCBB /* 0.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 0.pdf; sourceTree = "<group>"; };
+		C9A34E6F184FAF00009DFCBB /* 1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 1.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +130,7 @@
 			children = (
 				C9A34E5A184FA918009DFCBB /* BRPDFImage.xcodeproj */,
 				C9A34E1F184FA5ED009DFCBB /* Demo */,
+				C9A34E6D184FAF00009DFCBB /* Icons */,
 				C9A34E38184FA5ED009DFCBB /* DemoTests */,
 				C9A34E18184FA5ED009DFCBB /* Frameworks */,
 				C9A34E17184FA5ED009DFCBB /* Products */,
@@ -150,19 +160,22 @@
 		C9A34E1F184FA5ED009DFCBB /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				C9A34E28184FA5ED009DFCBB /* AppDelegate.h */,
+				C9A34E29184FA5ED009DFCBB /* AppDelegate.m */,
 				C9A34E48184FA632009DFCBB /* SimpleIconViewController.h */,
 				C9A34E49184FA632009DFCBB /* SimpleIconViewController.m */,
 				C9A34E4E184FA694009DFCBB /* SimpleIconViewController.xib */,
 				C9A34E4A184FA632009DFCBB /* SimpleIconCell.h */,
 				C9A34E4B184FA632009DFCBB /* SimpleIconCell.m */,
+				C9A34E66184FAA3F009DFCBB /* SimpleIconCell.xib */,
 				C9A34E50184FA7F9009DFCBB /* TableIconViewController.h */,
 				C9A34E51184FA7F9009DFCBB /* TableIconViewController.m */,
 				C9A34E52184FA7F9009DFCBB /* TableIconViewController.xib */,
 				C9A34E55184FA819009DFCBB /* TableIconCell.h */,
 				C9A34E56184FA819009DFCBB /* TableIconCell.m */,
 				C9A34E58184FA82F009DFCBB /* TableIconCell.xib */,
-				C9A34E28184FA5ED009DFCBB /* AppDelegate.h */,
-				C9A34E29184FA5ED009DFCBB /* AppDelegate.m */,
+				C9A34E68184FABEB009DFCBB /* UIColor+Demo.h */,
+				C9A34E69184FABEB009DFCBB /* UIColor+Demo.m */,
 				C9A34E2B184FA5ED009DFCBB /* Images.xcassets */,
 				C9A34E20184FA5ED009DFCBB /* Supporting Files */,
 			);
@@ -205,6 +218,16 @@
 				C9A34E62184FA918009DFCBB /* BRPDFImageTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C9A34E6D184FAF00009DFCBB /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				C9A34E6E184FAF00009DFCBB /* 0.pdf */,
+				C9A34E6F184FAF00009DFCBB /* 1.pdf */,
+			);
+			name = Icons;
+			path = Demo/Icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,10 +329,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9A34E70184FAF00009DFCBB /* 0.pdf in Resources */,
 				C9A34E54184FA7F9009DFCBB /* TableIconViewController.xib in Resources */,
 				C9A34E59184FA82F009DFCBB /* TableIconCell.xib in Resources */,
 				C9A34E24184FA5ED009DFCBB /* InfoPlist.strings in Resources */,
 				C9A34E2C184FA5ED009DFCBB /* Images.xcassets in Resources */,
+				C9A34E67184FAA3F009DFCBB /* SimpleIconCell.xib in Resources */,
+				C9A34E71184FAF00009DFCBB /* 1.pdf in Resources */,
 				C9A34E4F184FA694009DFCBB /* SimpleIconViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +357,7 @@
 			files = (
 				C9A34E2A184FA5ED009DFCBB /* AppDelegate.m in Sources */,
 				C9A34E4C184FA632009DFCBB /* SimpleIconViewController.m in Sources */,
+				C9A34E6A184FABEB009DFCBB /* UIColor+Demo.m in Sources */,
 				C9A34E4D184FA632009DFCBB /* SimpleIconCell.m in Sources */,
 				C9A34E53184FA7F9009DFCBB /* TableIconViewController.m in Sources */,
 				C9A34E26184FA5ED009DFCBB /* main.m in Sources */,
@@ -417,6 +444,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "\"$(PROJECT_DIR)/../BRPDFImage/BRPDFImage\"";
 			};
 			name = Debug;
 		};
@@ -449,6 +477,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "\"$(PROJECT_DIR)/../BRPDFImage/BRPDFImage\"";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -461,7 +490,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Demo/Demo-Prefix.pch";
 				INFOPLIST_FILE = "Demo/Demo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -474,7 +505,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Demo/Demo-Prefix.pch";
 				INFOPLIST_FILE = "Demo/Demo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
