@@ -8,13 +8,17 @@
 
 #import "BRPDFImage+Demo.h"
 
-#import "UIColor+Demo.h"
-
 static NSMutableDictionary *IconCache;
 
 static const u_int32_t kNumIcons = 7;
 
 @implementation BRPDFImage (Demo)
+
+#define RandomColorComponent ((arc4random_uniform(52) * 5)/255.0)
+
++ (UIColor *)randomColor {
+	return [UIColor colorWithRed:RandomColorComponent green:RandomColorComponent blue:RandomColorComponent alpha:1.0];
+}
 
 + (BRPDFImage *)randomIcon {
 	// Caching these random icons is not the best idea, but in a real application with a small set of known icons used frequently
@@ -24,7 +28,7 @@ static const u_int32_t kNumIcons = 7;
 		IconCache = [[NSMutableDictionary alloc] initWithCapacity:64];
 	});
 	NSString *iconName = [NSString stringWithFormat:@"%u", arc4random_uniform(kNumIcons)];
-	UIColor *iconColor = [UIColor randomColor];
+	UIColor *iconColor = [self randomColor];
 	CGFloat r, g, b;
 	[iconColor getRed:&r green:&g blue:&b alpha:NULL];
 	
@@ -39,7 +43,7 @@ static const u_int32_t kNumIcons = 7;
 	if ( img == nil ) {
 		img = [[BRPDFImage alloc] initWithURL:[[NSBundle mainBundle] URLForResource:iconName withExtension:@"pdf"]
 								   pageNumber:1 renderSize:CGSizeMake(100,100)
-							  backgroundColor:[UIColor clearColor] tintColor:[UIColor randomColor]];
+							  backgroundColor:[UIColor clearColor] tintColor:iconColor];
 		IconCache[cacheKey] = img;
 	}
 	return img;

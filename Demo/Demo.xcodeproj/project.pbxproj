@@ -28,7 +28,6 @@
 		C9A34E59184FA82F009DFCBB /* TableIconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9A34E58184FA82F009DFCBB /* TableIconCell.xib */; };
 		C9A34E65184FA92D009DFCBB /* libBRPDFImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A34E60184FA918009DFCBB /* libBRPDFImage.a */; };
 		C9A34E67184FAA3F009DFCBB /* SimpleIconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9A34E66184FAA3F009DFCBB /* SimpleIconCell.xib */; };
-		C9A34E6A184FABEB009DFCBB /* UIColor+Demo.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A34E69184FABEB009DFCBB /* UIColor+Demo.m */; };
 		C9A34E70184FAF00009DFCBB /* 0.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C9A34E6E184FAF00009DFCBB /* 0.pdf */; };
 		C9A34E71184FAF00009DFCBB /* 1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C9A34E6F184FAF00009DFCBB /* 1.pdf */; };
 		C9A34E74184FC4B4009DFCBB /* BRPDFImage+Demo.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A34E73184FC4B4009DFCBB /* BRPDFImage+Demo.m */; };
@@ -100,8 +99,6 @@
 		C9A34E58184FA82F009DFCBB /* TableIconCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableIconCell.xib; sourceTree = "<group>"; };
 		C9A34E5A184FA918009DFCBB /* BRPDFImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BRPDFImage.xcodeproj; path = ../BRPDFImage/BRPDFImage.xcodeproj; sourceTree = "<group>"; };
 		C9A34E66184FAA3F009DFCBB /* SimpleIconCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleIconCell.xib; sourceTree = "<group>"; };
-		C9A34E68184FABEB009DFCBB /* UIColor+Demo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Demo.h"; sourceTree = "<group>"; };
-		C9A34E69184FABEB009DFCBB /* UIColor+Demo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Demo.m"; sourceTree = "<group>"; };
 		C9A34E6E184FAF00009DFCBB /* 0.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 0.pdf; sourceTree = "<group>"; };
 		C9A34E6F184FAF00009DFCBB /* 1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 1.pdf; sourceTree = "<group>"; };
 		C9A34E72184FC4B4009DFCBB /* BRPDFImage+Demo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BRPDFImage+Demo.h"; sourceTree = "<group>"; };
@@ -177,8 +174,6 @@
 				C9A34E29184FA5ED009DFCBB /* AppDelegate.m */,
 				C9A34E72184FC4B4009DFCBB /* BRPDFImage+Demo.h */,
 				C9A34E73184FC4B4009DFCBB /* BRPDFImage+Demo.m */,
-				C9A34E68184FABEB009DFCBB /* UIColor+Demo.h */,
-				C9A34E69184FABEB009DFCBB /* UIColor+Demo.m */,
 				C9A34E75184FC4BD009DFCBB /* UI */,
 				C9A34E2B184FA5ED009DFCBB /* Images.xcassets */,
 				C9A34E20184FA5ED009DFCBB /* Supporting Files */,
@@ -390,7 +385,6 @@
 			files = (
 				C9A34E2A184FA5ED009DFCBB /* AppDelegate.m in Sources */,
 				C9A34E4C184FA632009DFCBB /* SimpleIconViewController.m in Sources */,
-				C9A34E6A184FABEB009DFCBB /* UIColor+Demo.m in Sources */,
 				C9A34E4D184FA632009DFCBB /* SimpleIconCell.m in Sources */,
 				C9A34E53184FA7F9009DFCBB /* TableIconViewController.m in Sources */,
 				C9A34E74184FC4B4009DFCBB /* BRPDFImage+Demo.m in Sources */,
