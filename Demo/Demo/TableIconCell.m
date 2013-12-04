@@ -10,20 +10,11 @@
 
 @implementation TableIconCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)layoutSubviews {
+	[super layoutSubviews];
+	const CGPoint center = CGPointMake(CGRectGetMidX(self.contentView.bounds), CGRectGetMidY(self.contentView.bounds));
+	self.leftIcon.center = CGPointMake(center.x - CGRectGetWidth(self.leftIcon.bounds) * 0.5 - 5, center.y);
+	self.rightIcon.center = CGPointMake(center.x + CGRectGetWidth(self.rightIcon.bounds) * 0.5 + 5, center.y);
 }
 
 @end

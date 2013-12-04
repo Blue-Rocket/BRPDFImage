@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TableIconCell : UITableViewCell
-
+@property (weak, nonatomic) IBOutlet UIImageView *leftIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *rightIcon;
 @end

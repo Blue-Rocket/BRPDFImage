@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class TableIconCell;
+
 @interface TableIconViewController : UITableViewController
+
+@property (nonatomic, strong) IBOutlet TableIconCell *cell;
 
 @end
