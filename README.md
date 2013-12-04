@@ -9,9 +9,10 @@ As an iOS developer, have you ever thought any of the following:
   * I'm tired of making two PNG icons for every image, to support retina
     images!
   * I don't want to make @4x icons when the new Eagle Eye Retina
-    Display comes out! * I have all these icons created in [Illustrator,
-    Inkscape, ...] and I'm annoyed that I have to re-render them as PNG
-    files every time I make a change!
+    Display comes out!
+  * I have all these icons created in [Illustrator, Inkscape, ...] and 
+    I'm annoyed that I have to re-render them as PNG files every time I
+    make a change!
   * Why is it raining right now?
 
 If you have, then `BRPDFImage` is here to help you, and wash away those
