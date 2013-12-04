@@ -22,6 +22,10 @@ static void BRPdfDrawPage(CGPDFPageRef page, CGRect rect, CGColorRef backgroundC
 	return [self initWithURL:url pageNumber:1 renderSize:size backgroundColor:[UIColor clearColor] tintColor:nil];
 }
 
+- (id)initWithURL:(NSURL *)url renderSize:(CGSize)size tintColor:(UIColor *)tintColor {
+	return [self initWithURL:url pageNumber:1 renderSize:size backgroundColor:[UIColor clearColor] tintColor:tintColor];
+}
+
 - (id)initWithURL:(NSURL *)url pageNumber:(size_t)pageNumber renderSize:(CGSize)size  backgroundColor:(UIColor *)backgroundColor
 		tintColor:(UIColor *)tintColor {
 	CGPDFDocumentRef doc = [self newCGPDFDocumentWithURL:url];
@@ -35,6 +39,14 @@ static void BRPdfDrawPage(CGPDFPageRef page, CGRect rect, CGColorRef backgroundC
 	self = [super initWithCGImage:bitmap.CGImage scale:bitmap.scale orientation:bitmap.imageOrientation];
 	CGPDFDocumentRelease(doc);
 	return self;
+}
+
+- (id)initWithURL:(NSURL *)url maximumSize:(CGSize)size {
+	return [self initWithURL:url pageNumber:1 maximumSize:size backgroundColor:[UIColor clearColor] tintColor:nil];
+}
+
+- (id)initWithURL:(NSURL *)url maximumSize:(CGSize)size tintColor:(UIColor *)tintColor {
+	return [self initWithURL:url pageNumber:1 maximumSize:size backgroundColor:[UIColor clearColor] tintColor:tintColor];
 }
 
 - (id)initWithURL:(NSURL *)url pageNumber:(size_t)pageNumber maximumSize:(CGSize)size  backgroundColor:(UIColor *)backgroundColor
