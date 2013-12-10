@@ -27,13 +27,15 @@
 	   pageNumber:(size_t)pageNumber
 	   renderSize:(CGSize)size
   backgroundColor:(UIColor *)backgroundColor
-		tintColor:(UIColor *)tintColor;
+		tintColor:(UIColor *)tintColor
+	tintBlendMode:(CGBlendMode)tintBlendMode;
 
 // init with an aspect-constrained maximum size
 - (id)initWithURL:(NSURL *)url
 	   pageNumber:(size_t)pageNumber
 	  maximumSize:(CGSize)size
   backgroundColor:(UIColor *)backgroundColor
-		tintColor:(UIColor *)tintColor;
+		tintColor:(UIColor *)tintColor
+	tintBlendMode:(CGBlendMode)tintBlendMode;
 
 @end

@@ -19,21 +19,22 @@ static void BRPdfDrawPage(CGPDFPageRef page, CGRect rect, CGColorRef backgroundC
 @implementation BRPDFImage
 
 - (id)initWithURL:(NSURL *)url renderSize:(CGSize)size {
-	return [self initWithURL:url pageNumber:1 renderSize:size backgroundColor:[UIColor clearColor] tintColor:nil];
+	return [self initWithURL:url pageNumber:1 renderSize:size backgroundColor:[UIColor clearColor] tintColor:nil tintBlendMode:kCGBlendModeSourceIn];
 }
 
 - (id)initWithURL:(NSURL *)url renderSize:(CGSize)size tintColor:(UIColor *)tintColor {
-	return [self initWithURL:url pageNumber:1 renderSize:size backgroundColor:[UIColor clearColor] tintColor:tintColor];
+	return [self initWithURL:url pageNumber:1 renderSize:size backgroundColor:[UIColor clearColor] tintColor:tintColor tintBlendMode:kCGBlendModeSourceIn];
 }
 
 - (id)initWithURL:(NSURL *)url pageNumber:(size_t)pageNumber renderSize:(CGSize)size  backgroundColor:(UIColor *)backgroundColor
-		tintColor:(UIColor *)tintColor {
+		tintColor:(UIColor *)tintColor tintBlendMode:(CGBlendMode)tintBlendMode {
 	CGPDFDocumentRef doc = [self newCGPDFDocumentWithURL:url];
 	UIImage *bitmap = nil;
 	if ( doc != NULL ) {
 		CGPDFPageRef page = CGPDFDocumentGetPage(doc, pageNumber);
 		if ( page != NULL ) {
-			bitmap = [BRPDFImage bitmapImageWithCGPDFPage:page size:size backgroundColor:backgroundColor tintColor:tintColor];
+			bitmap = [BRPDFImage bitmapImageWithCGPDFPage:page size:size backgroundColor:backgroundColor
+												tintColor:tintColor tintBlendMode:tintBlendMode];
 		}
 	}
 	self = [super initWithCGImage:bitmap.CGImage scale:bitmap.scale orientation:bitmap.imageOrientation];
@@ -42,22 +43,23 @@ static void BRPdfDrawPage(CGPDFPageRef page, CGRect rect, CGColorRef backgroundC
 }
 
 - (id)initWithURL:(NSURL *)url maximumSize:(CGSize)size {
-	return [self initWithURL:url pageNumber:1 maximumSize:size backgroundColor:[UIColor clearColor] tintColor:nil];
+	return [self initWithURL:url pageNumber:1 maximumSize:size backgroundColor:[UIColor clearColor] tintColor:nil tintBlendMode:kCGBlendModeSourceIn];
 }
 
 - (id)initWithURL:(NSURL *)url maximumSize:(CGSize)size tintColor:(UIColor *)tintColor {
-	return [self initWithURL:url pageNumber:1 maximumSize:size backgroundColor:[UIColor clearColor] tintColor:tintColor];
+	return [self initWithURL:url pageNumber:1 maximumSize:size backgroundColor:[UIColor clearColor] tintColor:tintColor tintBlendMode:kCGBlendModeSourceIn];
 }
 
 - (id)initWithURL:(NSURL *)url pageNumber:(size_t)pageNumber maximumSize:(CGSize)size  backgroundColor:(UIColor *)backgroundColor
-		tintColor:(UIColor *)tintColor {
+		tintColor:(UIColor *)tintColor tintBlendMode:(CGBlendMode)tintBlendMode {
 	CGPDFDocumentRef doc = [self newCGPDFDocumentWithURL:url];
 	UIImage *bitmap = nil;
 	if ( doc != NULL ) {
 		CGPDFPageRef page = CGPDFDocumentGetPage(doc, pageNumber);
 		CGSize aspectFitSize = BRAspectSizeToFit(BRPdfNaturalSize(page), size);
 		if ( page != NULL ) {
-			bitmap = [BRPDFImage bitmapImageWithCGPDFPage:page size:aspectFitSize backgroundColor:backgroundColor tintColor:tintColor];
+			bitmap = [BRPDFImage bitmapImageWithCGPDFPage:page size:aspectFitSize backgroundColor:backgroundColor
+												tintColor:tintColor tintBlendMode:tintBlendMode];
 		}
 	}
 	self = [super initWithCGImage:bitmap.CGImage scale:bitmap.scale orientation:bitmap.imageOrientation];
@@ -66,7 +68,7 @@ static void BRPdfDrawPage(CGPDFPageRef page, CGRect rect, CGColorRef backgroundC
 }
 
 + (UIImage *)bitmapImageWithCGPDFPage:(CGPDFPageRef)page size:(CGSize)renderSize backgroundColor:(UIColor *)backgroundColor
-							tintColor:(UIColor *)tintColor {
+							tintColor:(UIColor *)tintColor tintBlendMode:(const CGBlendMode)blendMode {
 	UIGraphicsBeginImageContextWithOptions(renderSize, NO, 0.0f);
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	CGRect frame = CGRectMake(0, 0, renderSize.width, renderSize.height);
@@ -74,7 +76,11 @@ static void BRPdfDrawPage(CGPDFPageRef page, CGRect rect, CGColorRef backgroundC
 		BRPdfDrawPage(page, frame, backgroundColor.CGColor, context, true);
 	} CGContextRestoreGState(context);
 	if ( tintColor != nil ) {
-		CGContextSetBlendMode(context, kCGBlendModeSourceIn);
+		if ( blendMode != kCGBlendModeSourceIn ) {
+			CGImageRef maskImage = UIGraphicsGetImageFromCurrentImageContext().CGImage;
+			CGContextClipToMask(context, frame, maskImage);
+		}
+		CGContextSetBlendMode(context, blendMode);
 		[tintColor setFill];
 		CGContextFillRect(context, frame);
 	}

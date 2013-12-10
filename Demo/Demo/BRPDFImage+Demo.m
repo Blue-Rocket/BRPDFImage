@@ -10,7 +10,7 @@
 
 static NSMutableDictionary *IconCache;
 
-static const u_int32_t kNumIcons = 7;
+static const u_int32_t kNumIcons = 8;
 
 @implementation BRPDFImage (Demo)
 
@@ -27,7 +27,8 @@ static const u_int32_t kNumIcons = 7;
 	dispatch_once(&onceToken, ^{
 		IconCache = [[NSMutableDictionary alloc] initWithCapacity:64];
 	});
-	NSString *iconName = [NSString stringWithFormat:@"%u", arc4random_uniform(kNumIcons)];
+	const u_int32_t randomIconNumber = arc4random_uniform(kNumIcons);
+	NSString *iconName = [NSString stringWithFormat:@"%u", randomIconNumber];
 	UIColor *iconColor = [self randomColor];
 	CGFloat r, g, b;
 	[iconColor getRed:&r green:&g blue:&b alpha:NULL];
@@ -41,9 +42,19 @@ static const u_int32_t kNumIcons = 7;
 	
 	BRPDFImage *img = IconCache[cacheKey];
 	if ( img == nil ) {
+		CGBlendMode blendMode;
+		switch ( randomIconNumber ) {
+			case 7:
+				blendMode = kCGBlendModeHardLight;
+				break;
+				
+			default:
+				blendMode = kCGBlendModeSourceIn;
+				break;
+		}
 		img = [[BRPDFImage alloc] initWithURL:[[NSBundle mainBundle] URLForResource:iconName withExtension:@"pdf"]
 								   pageNumber:1 renderSize:CGSizeMake(100,100)
-							  backgroundColor:[UIColor clearColor] tintColor:iconColor];
+							  backgroundColor:[UIColor clearColor] tintColor:iconColor tintBlendMode:blendMode];
 		IconCache[cacheKey] = img;
 	}
 	return img;
