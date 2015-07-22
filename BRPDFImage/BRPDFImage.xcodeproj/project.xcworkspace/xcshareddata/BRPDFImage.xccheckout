@@ -10,29 +10,29 @@
 	<string>BRPDFImage</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>6DCB48F8-5256-43A5-9304-E15C3A66B9FC</key>
-		<string>ssh://github.com/Blue-Rocket/BRPDFImage.git</string>
+		<key>60AAA211403F2C31060504B10620C2A8841FD8CE</key>
+		<string>github.com:Blue-Rocket/BRPDFImage.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>BRPDFImage/BRPDFImage.xcodeproj/project.xcworkspace</string>
+	<string>BRPDFImage/BRPDFImage.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>6DCB48F8-5256-43A5-9304-E15C3A66B9FC</key>
+		<key>60AAA211403F2C31060504B10620C2A8841FD8CE</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/Blue-Rocket/BRPDFImage.git</string>
+	<string>github.com:Blue-Rocket/BRPDFImage.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>6DCB48F8-5256-43A5-9304-E15C3A66B9FC</string>
+	<string>60AAA211403F2C31060504B10620C2A8841FD8CE</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>6DCB48F8-5256-43A5-9304-E15C3A66B9FC</string>
+			<string>60AAA211403F2C31060504B10620C2A8841FD8CE</string>
 			<key>IDESourceControlWCCName</key>
 			<string>BRPDFImage</string>
 		</dict>

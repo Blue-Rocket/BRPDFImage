@@ -1,0 +1,14 @@
+PODS:
+  - BRPDFImage (1.0.0)
+
+DEPENDENCIES:
+  - BRPDFImage (from `../`)
+
+EXTERNAL SOURCES:
+  BRPDFImage:
+    :path: ../
+
+SPEC CHECKSUMS:
+  BRPDFImage: 6a68f820e4e06ef8627f305cda147d4a31feff51
+
+COCOAPODS: 0.38.0
